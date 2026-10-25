@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clay &amp; Co. — SmallBatch Home Goods</title>
+  <meta name="description" content="A tiny ecommerce demo built with plain HTML, CSS and JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">Clay &amp; Co.</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#shop" class="is-active">Shop</a></li>
+          <li><a href="#">Our story</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="cart-btn" type="button" aria-expanded="false" aria-controls="cart-panel">
+        <span class="sr-only">Open cart</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M6 6h15l-1.5 9h-12z"></path>
+          <path d="M6 6L5 3H2"></path>
+          <circle cx="9" cy="20" r="1"></circle>
+          <circle cx="18" cy="20" r="1"></circle>
+        </svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">New collection</p>
+        <h1>Warm objects for quiet homes.</h1>
+        <p class="lede">Hand-thrown ceramics, linen runners and small brass things. Made in small batches, shipped with care.</p>
+        <a class="btn" href="#shop">Shop the collection</a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="hero-tag">
+          <strong>Free shipping</strong>
+          <span>on orders over $60</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" class="container shop">
+    <div class="section-head" id="shop">
+      <div>
+        <h2>The shop</h2>
+        <p class="muted" id="filter-status" aria-live="polite">Showing all 6 items</p>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter products">
+        <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="ceramics">Ceramics</button>
+        <button type="button" class="filter-btn" data-filter="textiles">Textiles</button>
+        <button type="button" class="filter-btn" data-filter="objects">Objects</button>
+      </div>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+      <article class="product" data-id="1" data-category="ceramics" data-name="Mocha Mug" data-price="24">
+        <div class="product-img img-mug" aria-hidden="true"></div>
+        <div class="product-body">
+          <span class="tag">Ceramics</span>
+          <h3>Mocha Mug</h3>
+          <p class="muted">12 oz, speckled glaze, dishwasher safe.</p>
+          <div class="product-foot">
+            <span class="price">$24</span>
+            <button type="button" class="btn btn-small add-btn">Add to cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-id="2" data-category="ceramics" data-name="Stone Bowl" data-price="32">
+        <div class="product-img img-bowl" aria-hidden="true"></div>
+        <div class="product-body">
+          <span class="tag">Ceramics</span>
+          <h3>Stone Bowl</h3>
+          <p class="muted">Deep serving bowl in matte ash.</p>
+          <div class="product-foot">
+            <span class="price">$32</span>
+            <button type="button" class="btn btn-small add-btn">Add to cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-id="3" data-category="textiles" data-name="Linen Runner" data-price="38">
+        <div class="product-img img-runner" aria-hidden="true"></div>
+        <div class="product-body">
+          <span class="tag">Textiles</span>
+          <h3>Linen Runner</h3>
+          <p class="muted">Stonewashed flax, 180 × 40 cm.</p>
+          <div class="product-foot">
+            <span class="price">$38</span>
+            <button type="button" class="btn btn-small add-btn">Add to cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-id="4" data-category="textiles" data-name="Waffle Towel Set" data-price="28">
+        <div class="product-img img-towel" aria-hidden="true"></div>
+        <div class="product-body">
+          <span class="tag">Textiles</span>
+          <h3>Waffle Towel Set</h3>
+          <p class="muted">Two hand towels, cloud white.</p>
+          <div class="product-foot">
+            <span class="price">$28</span>
+            <button type="button" class="btn btn-small add-btn">Add to cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-id="5" data-category="objects" data-name="Brass Candle Dish" data-price="18">
+        <div class="product-img img-brass" aria-hidden="true"></div>
+        <div class="product-body">
+          <span class="tag">Objects</span>
+          <h3>Brass Candle Dish</h3>
+          <p class="muted">Small dish for pillars or tealights.</p>
+          <div class="product-foot">
+            <span class="price">$18</span>
+            <button type="button" class="btn btn-small add-btn">Add to cart</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product" data-id="6" data-category="objects" data-name="Bud Vase" data-price="22">
+        <div class="product-img img-vase" aria-hidden="true"></div>
+        <div class="product-body">
+          <span class="tag">Objects</span>
+          <h3>Bud Vase</h3>
+          <p class="muted">Narrow neck for a single stem.</p>
+          <div class="product-foot">
+            <span class="price">$22</span>
+            <button type="button" class="btn btn-small add-btn">Add to cart</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <div class="cart-overlay" id="cart-overlay" hidden></div>
+
+  <aside class="cart-panel" id="cart-panel" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Your cart</h2>
+      <button type="button" class="close-cart" aria-label="Close cart">×</button>
+    </div>
+
+    <div class="cart-items" id="cart-items">
+      <p class="cart-empty" id="cart-empty">Your cart is empty. The mugs are waiting.</p>
+    </div>
+
+    <div class="cart-foot">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cart-total">$0</strong>
+      </div>
+      <button type="button" class="btn checkout-btn" id="checkout-btn" disabled>Checkout</button>
+      <p class="muted cart-note">Demo store — checkout is for show.</p>
+    </div>
+  </aside>
+
+  <section class="strip">
+    <div class="container strip-inner">
+      <div>
+        <h3>Small batches</h3>
+        <p class="muted">Restocked every other Friday.</p>
+      </div>
+      <div>
+        <h3>Easy returns</h3>
+        <p class="muted">30 days, no fuss.</p>
+      </div>
+      <div>
+        <h3>Packed by hand</h3>
+        <p class="muted">Recycled paper, zero plastic.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="logo">Clay &amp; Co.</p>
+        <p>Project 1 for DecodeLabs — a small responsive storefront in plain HTML, CSS and JavaScript.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <p class="copyright">© 2026 Clay &amp; Co.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
